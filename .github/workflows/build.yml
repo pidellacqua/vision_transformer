@@ -30,4 +30,4 @@ jobs:
         pip install .[test]
     - name: Run pytest
       run: |
-        pytest vit_jax
+        python -m vit_jax.main --workdir=/tmp/vit-$(date +%s) --config=$(pwd)/vit_jax/configs/vit.py:b16,cifar10 --config.pretrained_dir='gs://vit_models/imagenet21k'
